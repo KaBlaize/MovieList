@@ -24,7 +24,7 @@ Using the application framework provided for you, **create  a  movie  browsing  
 
 -  [X] HW-2: Create  a  screen  to  show  a  list  of  trending  movies.  Display  some  additional  info  including  the  movie  poster,  title,  its  genres, rating etc. (UI is provided)
 
--  [ ] HW-3: Selecting  a  movie  from  the  list,  the  user  should  navigate  to  the  detail  page  of  that  movie,  that  displays  some  additional  info. (UI + navigation provided)
+-  [X] HW-3: Selecting  a  movie  from  the  list,  the  user  should  navigate  to  the  detail  page  of  that  movie,  that  displays  some  additional  info. (UI + navigation provided)
 
 -  [ ] HW-4: On the details screen the user can mark the movie and add it to their own list (You don't have to persist this data). This status is also visible on the movie list screen. (shared data/state)
 

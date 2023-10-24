@@ -8,10 +8,13 @@
 import SwiftUI
 
 protocol MovieListScreenViewModelProtocol: ObservableObject {
+    associatedtype DetailsViewModel: MovieDetailsScreenViewModelProtocol
+    
     var movies: [MovieVM] { get }
     var maxPopularity: Float { get }
 
     func load()
+    func getMovieDetailsScreenViewModel(for movie: MovieVM) -> DetailsViewModel
 }
 
 struct MovieListScreen<ViewModel: MovieListScreenViewModelProtocol>: View {
@@ -36,7 +39,7 @@ struct MovieListScreen<ViewModel: MovieListScreenViewModelProtocol>: View {
     }
 
     func destinationView(using movie: MovieVM) -> some View {
-        MovieDetailsScreen(viewModel: MovieDetailsScreenViewModel(movie: movie))
+        MovieDetailsScreen(viewModel: viewModel.getMovieDetailsScreenViewModel(for: movie))
     }
 }
 

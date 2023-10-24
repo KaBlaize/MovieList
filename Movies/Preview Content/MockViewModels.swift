@@ -12,6 +12,10 @@ class MockViewModel: MovieListScreenViewModelProtocol {
     var maxPopularity: Float = 10
 
     func load() {}
+
+    func getMovieDetailsScreenViewModel(for movie: MovieVM) -> MockMovieDetailsViewModel {
+        MockMovieDetailsViewModel()
+    }
 }
 
 class MockMovieDetailsViewModel: MovieDetailsScreenViewModelProtocol {

@@ -35,4 +35,8 @@ class MovieListScreenViewModel: MovieListScreenViewModelProtocol {
             }
             .store(in: &bag)
     }
+
+    func getMovieDetailsScreenViewModel(for movie: MovieVM) -> MovieDetailsScreenViewModel {
+        MovieDetailsScreenViewModel(movie: movie)
+    }
 }

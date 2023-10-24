@@ -17,7 +17,6 @@ protocol MovieListDependencies: HasMovieRepository {
 
 }
 
-
 struct MovieListDependenciesImpl: MovieListDependencies {
     var localMovieDataSource = LocalMovieDataSourceImpl()
 
