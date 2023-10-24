@@ -9,11 +9,11 @@ import Foundation
 
 // TODO: Due to time.. I'll make it just work.
 
-protocol HasMovieRepository {
+protocol HasGetTrendingMoviesUseCase {
     func makeGetTrendingMoviesUseCase() -> GetTrendingMoviesUseCase
 }
 
-protocol MovieListDependencies: HasMovieRepository {
+protocol MovieListDependencies: HasGetTrendingMoviesUseCase {
 
 }
 
