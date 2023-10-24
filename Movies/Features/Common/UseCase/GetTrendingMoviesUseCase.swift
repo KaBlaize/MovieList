@@ -25,7 +25,7 @@ extension GetTrendingMoviesUseCaseImpl: GetTrendingMoviesUseCase {
         repository
             .getTrending()
             .mapLoaded { movieList in
-                return .init(
+                .init(
                     movies: movieList,
                     maxPopularity: movieList
                         .map { $0.popularity }
