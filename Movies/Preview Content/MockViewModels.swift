@@ -7,8 +7,9 @@
 
 import Foundation
 
-class MockViewModel: MoviesScreenViewModelProtocol {
+class MockViewModel: MovieListScreenViewModelProtocol {
     var movies: [MovieVM] = previewMovies
+    var maxPopularity: Float = 10
 
     func load() {}
 }

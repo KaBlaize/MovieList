@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct MovieListItem: View {
+struct MovieListItemView: View {
 
     let movie: MovieVM
+    let maxPopularity: Float
 
     var body: some View {
         HStack(spacing: 16) {
@@ -36,7 +37,7 @@ struct MovieListItem: View {
                     .foregroundColor(.gray)
                     .lineLimit(1)
                 HStack {
-                    ProgressView(value: movie.popularity / 10)
+                    ProgressView(value: movie.popularity / 10, total: maxPopularity / 10)
                     Text(String(format: "%.1f", movie.popularity))
                         .font(.headline)
                         .foregroundColor(.gray)
@@ -50,7 +51,7 @@ struct MovieListItem: View {
 
 struct MovieListItem_Previews: PreviewProvider {
     static var previews: some View {
-        MovieListItem(movie: previewMovies[1])
+        MovieListItemView(movie: previewMovies[1], maxPopularity: 10)
     }
 }
 

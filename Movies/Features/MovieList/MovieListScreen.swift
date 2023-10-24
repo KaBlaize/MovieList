@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-protocol MoviesScreenViewModelProtocol: ObservableObject {
+protocol MovieListScreenViewModelProtocol: ObservableObject {
     var movies: [MovieVM] { get }
+    var maxPopularity: Float { get }
+
     func load()
 }
 
-struct MoviesScreen<ViewModel: MoviesScreenViewModelProtocol>: View {
+struct MovieListScreen<ViewModel: MovieListScreenViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         NavigationView {
             List(viewModel.movies) { movie in
                 NavigationLink(destination: destinationView(using: movie)) {
-                    MovieListItem(movie: movie)
+                    MovieListItemView(movie: movie, maxPopularity: viewModel.maxPopularity)
                         .padding(.trailing, 8)
                 }
                 .padding(.trailing, 16)
@@ -41,9 +43,9 @@ struct MoviesScreen<ViewModel: MoviesScreenViewModelProtocol>: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MoviesScreen(viewModel: MockViewModel())
+            MovieListScreen(viewModel: MockViewModel())
                 .preferredColorScheme(.light)
-            MoviesScreen(viewModel: MockViewModel())
+            MovieListScreen(viewModel: MockViewModel())
                 .preferredColorScheme(.dark)
         }
     }
