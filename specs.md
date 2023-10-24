@@ -22,7 +22,7 @@ Using the application framework provided for you, **create  a  movie  browsing  
 
 -  [X] HW-1: Use  the  latest  version  of  [TMDB  api](https://developers.themoviedb.org/3/getting-started/introduction)  to  fetch  data  about  movies.  An  API  key  will  be  provided  for  you.
 
--  [ ] HW-2: Create  a  screen  to  show  a  list  of  trending  movies.  Display  some  additional  info  including  the  movie  poster,  title,  its  genres, rating etc. (UI is provided)
+-  [X] HW-2: Create  a  screen  to  show  a  list  of  trending  movies.  Display  some  additional  info  including  the  movie  poster,  title,  its  genres, rating etc. (UI is provided)
 
 -  [ ] HW-3: Selecting  a  movie  from  the  list,  the  user  should  navigate  to  the  detail  page  of  that  movie,  that  displays  some  additional  info. (UI + navigation provided)
 

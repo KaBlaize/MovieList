@@ -24,6 +24,7 @@ class MovieListScreenViewModel: MovieListScreenViewModelProtocol {
             .makeGetTrendingMoviesUseCase()
             .execute()
             .receive(on: DispatchQueue.main)
+        // FIXME: don't want to change the view due to time but I'd use the new model created for the use case to display loading and error states
             .sink { [weak self] dataTask in
                 switch dataTask {
                 case .loaded(let model):
