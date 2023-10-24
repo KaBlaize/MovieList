@@ -8,5 +8,5 @@
 import Foundation
 
 enum ApiError: Error {
-    case network, api, serialization
+    case network, api, serialization, weakSelfIsNil
 }

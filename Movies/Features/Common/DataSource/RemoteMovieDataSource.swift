@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol RemoteMovieDataSource {
-    func getTrending() -> AnyPublisher<DataTask<[MovieVM], ApiError>, Never>
+    func getTrending() -> AnyPublisher<MovieVMDataTask, Never>
 }
 
 final class RemoteMovieDataSourceImpl {
@@ -22,7 +22,7 @@ final class RemoteMovieDataSourceImpl {
 }
 
 extension RemoteMovieDataSourceImpl: RemoteMovieDataSource {
-    func getTrending() -> AnyPublisher<DataTask<[MovieVM], ApiError>, Never> {
+    func getTrending() -> AnyPublisher<MovieVMDataTask, Never> {
         api
             .getTrending()
             .mapLoaded { Mapper.map($0.results) }

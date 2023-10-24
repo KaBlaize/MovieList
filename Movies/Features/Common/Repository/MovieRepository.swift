@@ -10,13 +10,15 @@ import Combine
 
 protocol MovieRepository {
     /// Get trending movies from local datasource if possible. Otherwise fetch from remote and cache before return the list.
-    func getTrending() -> AnyPublisher<DataTask<[MovieVM], ApiError>, Never>
+    func getTrending() -> AnyPublisher<MovieVMDataTask, Never>
     func mark(movie: MovieVM) -> Bool
 }
 
 final class MovieRepositoryImpl {
     private let localDataSource: LocalMovieDataSource
     private let remoteDataSource: RemoteMovieDataSource
+
+    private var bag = Set<AnyCancellable>()
 
     init(localDataSource: LocalMovieDataSource, remoteDataSource: RemoteMovieDataSource) {
         self.localDataSource = localDataSource
@@ -25,33 +27,19 @@ final class MovieRepositoryImpl {
 }
 
 extension MovieRepositoryImpl: MovieRepository {
-    func getTrending() -> AnyPublisher<DataTask<[MovieVM], ApiError>, Never> {
-        if let movieList = localDataSource.getTrending() {
-            return DataTask
-                .asLoadedPublisher(data: movieList)
-        }
-        
-        return remoteDataSource
+    func getTrending() -> AnyPublisher<MovieVMDataTask, Never> {
+        remoteDataSource
             .getTrending()
-            .handleLoaded { [weak self] movieList in
-                self?.localDataSource.setTrending(movies: movieList)
-            }
+            .sink(receiveValue: { [weak self] dataTask in
+                self?.localDataSource.setTrending(movies: dataTask)
+            })
+            .store(in: &bag)
+
+        return localDataSource
+            .getTrending()
     }
 
     func mark(movie: MovieVM) -> Bool {
-        guard let cachedList = localDataSource.getTrending() else {
-            localDataSource.setTrending(movies: [movie.asToggled()])
-            return !movie.isMarked
-        }
-
-        localDataSource
-            .setTrending(
-                movies: cachedList
-                    .map {
-                        movie.id == $0.id ? $0.asToggled() : $0
-                    }
-            )
-
-        return !movie.isMarked
+        localDataSource.mark(movie: movie)
     }
 }

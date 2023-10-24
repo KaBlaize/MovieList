@@ -37,6 +37,7 @@
 		F81FD5B22AE6545200501A48 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B12AE6545200501A48 /* Dependencies.swift */; };
 		F81FD5B42AE65FE700501A48 /* MarkMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B32AE65FE700501A48 /* MarkMovieUseCase.swift */; };
 		F81FD5B62AE661FA00501A48 /* MovieVM+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */; };
+		F81FD5B82AE6726700501A48 /* MovieVMDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B72AE6726700501A48 /* MovieVMDataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		F81FD5B12AE6545200501A48 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		F81FD5B32AE65FE700501A48 /* MarkMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMovieUseCase.swift; sourceTree = "<group>"; };
 		F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieVM+Extension.swift"; sourceTree = "<group>"; };
+		F81FD5B72AE6726700501A48 /* MovieVMDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVMDataTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				9FB3BA0F27BA7A4A002CD259 /* MovieVM.swift */,
 				F81FD5AC2AE6517600501A48 /* MovieListModel.swift */,
+				F81FD5B72AE6726700501A48 /* MovieVMDataTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				F81FD5A72AE648EF00501A48 /* MovieRepository.swift in Sources */,
 				F81FD5AD2AE6517600501A48 /* MovieListModel.swift in Sources */,
 				F81FD5A22AE6421000501A48 /* RemoteMovieDataSource.swift in Sources */,
+				F81FD5B82AE6726700501A48 /* MovieVMDataTask.swift in Sources */,
 				9F477C0E27BA5CF800DAE295 /* MovieListScreen.swift in Sources */,
 				F81FD5872AE5753A00501A48 /* TmdbApi.swift in Sources */,
 				F81FD5B22AE6545200501A48 /* Dependencies.swift in Sources */,
