@@ -35,6 +35,8 @@
 		F81FD5AD2AE6517600501A48 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5AC2AE6517600501A48 /* MovieListModel.swift */; };
 		F81FD5B02AE6525B00501A48 /* GetTrendingMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5AF2AE6525B00501A48 /* GetTrendingMoviesUseCase.swift */; };
 		F81FD5B22AE6545200501A48 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B12AE6545200501A48 /* Dependencies.swift */; };
+		F81FD5B42AE65FE700501A48 /* MarkMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B32AE65FE700501A48 /* MarkMovieUseCase.swift */; };
+		F81FD5B62AE661FA00501A48 /* MovieVM+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		F81FD5AC2AE6517600501A48 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
 		F81FD5AF2AE6525B00501A48 /* GetTrendingMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingMoviesUseCase.swift; sourceTree = "<group>"; };
 		F81FD5B12AE6545200501A48 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		F81FD5B32AE65FE700501A48 /* MarkMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMovieUseCase.swift; sourceTree = "<group>"; };
+		F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieVM+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 				F81FD5952AE5882B00501A48 /* Logger+Extension.swift */,
 				F81FD5A32AE646C100501A48 /* Publisher+DataTask.swift */,
 				F81FD5AA2AE64E4D00501A48 /* DataTask+Publisher.swift */,
+				F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				F81FD5AF2AE6525B00501A48 /* GetTrendingMoviesUseCase.swift */,
+				F81FD5B32AE65FE700501A48 /* MarkMovieUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				9FE3723727BF9C4E00A0D8BD /* APIkey.swift in Sources */,
 				F81FD58B2AE5758F00501A48 /* ApiError.swift in Sources */,
 				9FB3BA1E27BAB9C3002CD259 /* MovieDetailsScreen.swift in Sources */,
+				F81FD5B42AE65FE700501A48 /* MarkMovieUseCase.swift in Sources */,
 				F81FD5A42AE646C100501A48 /* Publisher+DataTask.swift in Sources */,
 				F81FD5A02AE641DD00501A48 /* LocalMovieDataSource.swift in Sources */,
 				9FE3722427BACC3400A0D8BD /* AsnycImage.swift in Sources */,
@@ -361,6 +368,7 @@
 				9F477C0C27BA5CF800DAE295 /* MoviesApp.swift in Sources */,
 				F81FD5B02AE6525B00501A48 /* GetTrendingMoviesUseCase.swift in Sources */,
 				F81FD5962AE5882B00501A48 /* Logger+Extension.swift in Sources */,
+				F81FD5B62AE661FA00501A48 /* MovieVM+Extension.swift in Sources */,
 				F81FD58D2AE5819400501A48 /* TrendingList.swift in Sources */,
 				9FB3BA1827BAAF58002CD259 /* MovieListScreenViewModel.swift in Sources */,
 			);

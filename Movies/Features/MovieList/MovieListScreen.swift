@@ -30,12 +30,12 @@ struct MovieListScreen<ViewModel: MovieListScreenViewModelProtocol>: View {
                 .padding(.trailing, 16)
                 .listRowInsets(EdgeInsets())
             }
+            .onAppear(perform: {
+                viewModel.load()
+            })
             .navigationTitle("Movies")
         }
         .navigationViewStyle(.stack)
-        .onAppear(perform: {
-            viewModel.load()
-        })
     }
 
     func destinationView(using movie: MovieVM) -> some View {

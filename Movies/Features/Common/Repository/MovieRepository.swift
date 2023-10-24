@@ -11,6 +11,7 @@ import Combine
 protocol MovieRepository {
     /// Get trending movies from local datasource if possible. Otherwise fetch from remote and cache before return the list.
     func getTrending() -> AnyPublisher<DataTask<[MovieVM], ApiError>, Never>
+    func mark(movie: MovieVM) -> Bool
 }
 
 final class MovieRepositoryImpl {
@@ -35,5 +36,22 @@ extension MovieRepositoryImpl: MovieRepository {
             .handleLoaded { [weak self] movieList in
                 self?.localDataSource.setTrending(movies: movieList)
             }
+    }
+
+    func mark(movie: MovieVM) -> Bool {
+        guard let cachedList = localDataSource.getTrending() else {
+            localDataSource.setTrending(movies: [movie.asToggled()])
+            return !movie.isMarked
+        }
+
+        localDataSource
+            .setTrending(
+                movies: cachedList
+                    .map {
+                        movie.id == $0.id ? $0.asToggled() : $0
+                    }
+            )
+
+        return !movie.isMarked
     }
 }
