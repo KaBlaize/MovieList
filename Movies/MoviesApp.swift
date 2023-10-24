@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct MoviesApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    private let movieListDependencies = MovieListDependenciesImpl()
 
     var body: some Scene {
         WindowGroup {
-            MoviesScreen(viewModel: MoviesScreenViewModel())
+            MovieListScreen(viewModel: MovieListScreenViewModel(dependencies: movieListDependencies))
         }
     }
 }
