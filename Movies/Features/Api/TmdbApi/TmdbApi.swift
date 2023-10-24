@@ -10,31 +10,55 @@ import Foundation
 import OSLog
 
 protocol TmdbApi {
-    func getTrending() -> AnyPublisher<DataTask<TrendingList, ApiError>, Never>
+    func getTrending() -> AnyPublisher<DataTask<TrendingListResponse, ApiError>, Never>
+    func getGenres() -> AnyPublisher<DataTask<GenreListResponse, ApiError>, Never>
 }
 
 final class TmdbApiImpl {
-    private let trendingUrl: URL
-    private let session = URLSession.shared
+    private enum Constants {
+        static let baseUrl = "https://api.themoviedb.org/3/"
 
-    private var bag = Set<AnyCancellable>()
-
-    init() {
-        self.trendingUrl =  URL(string: "https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=\(APIkey)")!
+        static let parameters = "?language=en-US&api_key=\(APIkey)"
     }
+
+    private enum ApiUrl: String {
+        case trending = "trending/movie/day"
+        case genre = "genre/movie/list"
+    }
+
+    private let session = URLSession.shared
 }
 
 extension TmdbApiImpl: TmdbApi {
-    func getTrending() -> AnyPublisher<DataTask<TrendingList, ApiError>, Never> {
+    func getTrending() -> AnyPublisher<DataTask<TrendingListResponse, ApiError>, Never> {
+        get(url: .trending)
+    }
 
-        let headers = [
+    func getGenres() -> AnyPublisher<DataTask<GenreListResponse, ApiError>, Never> {
+        get(url: .genre)
+    }
+}
+
+extension TmdbApiImpl {
+    private func get<T: Codable>(url: ApiUrl) -> AnyPublisher<DataTask<T, ApiError>, Never> {
+        session
+            .mapRequestToSubject(
+                request: createGetRequest(apiUrl: url),
+                type: T.self
+            )
+    }
+
+    private func createGetRequest(apiUrl: ApiUrl) -> URLRequest {
+        guard let url = URL(string: "\(Constants.baseUrl)\(apiUrl.rawValue)\(Constants.parameters)") else {
+            return NSURLRequest() as URLRequest
+        }
+
+        let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [
             "accept": "application/json",
         ]
 
-        let request = NSMutableURLRequest(url: trendingUrl as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 100.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        return session.mapRequestToSubject(request: request as URLRequest, type: TrendingList.self)
+        return request as URLRequest
     }
 }

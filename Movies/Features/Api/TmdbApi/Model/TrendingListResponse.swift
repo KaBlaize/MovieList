@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - TrendingList
-struct TrendingList: Codable {
+struct TrendingListResponse: Codable {
     let page: Int
     let results: [TrendingListItem]
     let totalPages, totalResults: Int
