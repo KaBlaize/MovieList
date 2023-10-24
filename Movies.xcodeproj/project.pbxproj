@@ -39,6 +39,7 @@
 		F81FD5B62AE661FA00501A48 /* MovieVM+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */; };
 		F81FD5B82AE6726700501A48 /* MovieVMDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B72AE6726700501A48 /* MovieVMDataTask.swift */; };
 		F81FD5BA2AE67EAE00501A48 /* GenreListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B92AE67EAE00501A48 /* GenreListResponse.swift */; };
+		F81FD5BC2AE6849800501A48 /* Publishers+DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5BB2AE6849800501A48 /* Publishers+DataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieVM+Extension.swift"; sourceTree = "<group>"; };
 		F81FD5B72AE6726700501A48 /* MovieVMDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVMDataTask.swift; sourceTree = "<group>"; };
 		F81FD5B92AE67EAE00501A48 /* GenreListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListResponse.swift; sourceTree = "<group>"; };
+		F81FD5BB2AE6849800501A48 /* Publishers+DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+DataTask.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				F81FD5A32AE646C100501A48 /* Publisher+DataTask.swift */,
 				F81FD5AA2AE64E4D00501A48 /* DataTask+Publisher.swift */,
 				F81FD5B52AE661FA00501A48 /* MovieVM+Extension.swift */,
+				F81FD5BB2AE6849800501A48 /* Publishers+DataTask.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				9F477C0E27BA5CF800DAE295 /* MovieListScreen.swift in Sources */,
 				F81FD5872AE5753A00501A48 /* TmdbApi.swift in Sources */,
 				F81FD5B22AE6545200501A48 /* Dependencies.swift in Sources */,
+				F81FD5BC2AE6849800501A48 /* Publishers+DataTask.swift in Sources */,
 				9F477C0C27BA5CF800DAE295 /* MoviesApp.swift in Sources */,
 				F81FD5B02AE6525B00501A48 /* GetTrendingMoviesUseCase.swift in Sources */,
 				F81FD5962AE5882B00501A48 /* Logger+Extension.swift in Sources */,

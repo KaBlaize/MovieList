@@ -23,8 +23,9 @@ final class RemoteMovieDataSourceImpl {
 
 extension RemoteMovieDataSourceImpl: RemoteMovieDataSource {
     func getTrending() -> AnyPublisher<MovieVMDataTask, Never> {
-        api
-            .getTrending()
-            .mapLoaded { Mapper.map($0.results) }
+        Publishers.CombineLatest(api.getTrending(), api.getGenres())
+            .mapLoaded { movieList, genreList in
+                Mapper.map(movieList.results, genres: genreList.genres)
+            }
     }
 }

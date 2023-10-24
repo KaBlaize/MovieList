@@ -28,7 +28,7 @@ Using the application framework provided for you, **create  a  movie  browsing  
 
 -  [X] HW-4: On the details screen the user can mark the movie and add it to their own list (You don't have to persist this data). This status is also visible on the movie list screen. (shared data/state)
 
--  [ ] HW-5: Please  note  that  TMDB  uses  unique  genre  IDs  that  need  to  be  resolved  using  a  separate  API  call.  Do  not  hardcode  genres  into  your  application. (https://developer.themoviedb.org/reference/genre-movie-list)
+-  [X] HW-5: Please  note  that  TMDB  uses  unique  genre  IDs  that  need  to  be  resolved  using  a  separate  API  call.  Do  not  hardcode  genres  into  your  application. (https://developer.themoviedb.org/reference/genre-movie-list)
 
 
 
