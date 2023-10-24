@@ -10,7 +10,7 @@ import Foundation
 import OSLog
 
 extension URLSession {
-    // TODO: improve logging 
+    // TODO: improve logging, clean it up
     func mapRequestToSubject<T: Codable>(request: URLRequest, type: T.Type) -> AnyPublisher<DataTask<T, ApiError>, Never> {
         let subject = CurrentValueSubject<DataTask<T, ApiError>, Never>(.loading)
         let session = self
