@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DataTask<T: Codable, E: Error> {
+enum DataTask<T, E: Error> {
     case loading
     case loaded(data: T)
     case failed(error: E)

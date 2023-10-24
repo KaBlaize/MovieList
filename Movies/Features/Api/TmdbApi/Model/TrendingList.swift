@@ -10,7 +10,7 @@ import Foundation
 // MARK: - TrendingList
 struct TrendingList: Codable {
     let page: Int
-    let results: [Result]
+    let results: [TrendingListItem]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ struct TrendingList: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct TrendingListItem: Codable {
     let adult: Bool
     let backdropPath: String
     let id: Int
